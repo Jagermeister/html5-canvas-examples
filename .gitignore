@@ -1,0 +1,5 @@
+# package management
+/node_modules
+
+# 
+/dist
