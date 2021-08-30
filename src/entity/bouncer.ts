@@ -1,5 +1,5 @@
 import { Dimension, Entity } from './entity';
-import { utility } from '../utility';
+import { RenderContext } from '../canvas/canvasManager';
 
 export class Bouncer extends Entity {
   text: string;
@@ -40,11 +40,11 @@ export class Bouncer extends Entity {
     }
   }
 
-  display(ctx) {
+  display(ctx: RenderContext) {
     if (this.dimensions.width == null) {
-      this.dimensions.width = ctx.measureText(this.text).width
+      this.dimensions.width = ctx.measureText(this.text).width;
     }
 
-    //utility.strokeText(ctx, this.text, this.location);
+    ctx.strokeText(this.text, this.location);
   }
 };

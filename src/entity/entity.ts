@@ -1,3 +1,5 @@
+import { RenderContext } from "../canvas/canvasManager";
+
 export interface Point {
   x: number,
   y: number
@@ -25,11 +27,11 @@ export class Entity {
     this.dimensions = dimensions;
   }
 
-  update(delta) {
+  update(delta: number) {
 
   }
 
-  display(ctx) {
+  display(ctx: RenderContext) {
 
   }
 }
