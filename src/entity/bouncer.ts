@@ -1,5 +1,5 @@
 import { Dimension, Entity } from './entity';
-import { utility } from '../canvas';
+import { utility } from '../utility';
 
 export class Bouncer extends Entity {
   text: string;
@@ -45,6 +45,6 @@ export class Bouncer extends Entity {
       this.dimensions.width = ctx.measureText(this.text).width
     }
 
-    utility.strokeText(ctx, this.text, this.location);
+    //utility.strokeText(ctx, this.text, this.location);
   }
 };
