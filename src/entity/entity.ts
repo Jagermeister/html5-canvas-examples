@@ -1,4 +1,4 @@
-import { RenderContext } from "../canvas/canvasManager";
+import { RenderContext } from "../canvas/renderContext";
 
 export interface Point {
   x: number,
@@ -10,21 +10,23 @@ export interface Dimension {
   height: number
 }
 
-export interface Velocity {
-  dx: number,
-  dy: number
-}
-
 export class Entity {
   location: Point;
   dimensions: Dimension;
+  container: Dimension;
 
-  velocity: Velocity;
-
-  constructor(location: Point, dimensions: Dimension, velocity: Velocity) {
+  constructor(location: Point, dimensions: Dimension, container: Dimension) {
     this.location = location
-    this.velocity = velocity;
     this.dimensions = dimensions;
+    this.container = container;
+  }
+
+  isXOutOfBounds() {
+    return this.location.x < 0 || (this.location.x + this.dimensions.width) > this.container.width;
+  }
+
+  isYOutOfBounds() {
+    return (this.location.y - this.dimensions.height) < 0 || this.location.y > this.container.height;
   }
 
   update(delta: number) {

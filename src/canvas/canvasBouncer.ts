@@ -1,4 +1,4 @@
-import { Canvas, RenderContext } from "./canvasManager";
+import { Canvas } from "./canvas";
 import { Dimension } from "../entity/entity";
 import { Bouncer } from "../entity/bouncer";
 
